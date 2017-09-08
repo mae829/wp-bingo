@@ -152,21 +152,6 @@ class WP_Bingo_Template {
 		wp_register_style( 'wp-bingo', plugin_dir_url( dirname( __FILE__ ) ) .'css/wp-bingo.min.css', array(), WP_BINGO_VERSION );
 		wp_register_script( 'wp-bingo', plugin_dir_url( dirname( __FILE__ ) ) .'js/wp-bingo.min.js', array(), WP_BINGO_VERSION, true );
 
-		global $post;
-
-		if ( !empty( $post ) ) {
-
-			$template	= get_post_meta( $post->ID, '_wp_page_template', true );
-
-			if ( array_key_exists ( $template, $this->templates ) ) {
-
-				wp_enqueue_style( 'wp-bingo' );
-				wp_enqueue_script( 'wp-bingo' );
-
-			}
-
-		}
-
 	}
 
 	/**
