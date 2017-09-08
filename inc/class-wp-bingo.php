@@ -42,6 +42,12 @@ class WP_Bingo {
 		WP_Bingo_Template::singleton(); // Call class
 
 		/**
+		 * The class responsible for setting up the shortcode of the plugin.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'inc/class-wp-bingo-shortcode.php';
+		WP_Bingo_Shortcode::singleton(); // Call class
+
+		/**
 		 * The class responsible for handling the metadata for our plugin.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'inc/class-wp-bingo-metadata.php';

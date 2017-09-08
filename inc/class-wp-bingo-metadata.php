@@ -50,15 +50,15 @@ class WP_Bingo_Metadata {
 
 			$template	= get_post_meta( $post->ID, '_wp_page_template', true );
 
-			if ( array_key_exists ( $template, $this->templates ) ) {
+			if ( array_key_exists ( $template, $this->templates ) || has_shortcode( $post->post_content, 'wp_bingo' ) ) {
 				add_meta_box(
 					'wp-bingo-meta', // id
 					'Bingo Buzzwords', // title
 					array( $this, 'wp_bingo_meta_html' ), // callback
-					'page', // object type
+					$post_type, // object type
 					'normal', // context
 					'high' // priority
-				 );
+				);
 			}
 
 		}

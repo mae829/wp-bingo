@@ -149,6 +149,9 @@ class WP_Bingo_Template {
 	 */
 	public function register_public_scripts_and_styles() {
 
+		wp_register_style( 'wp-bingo', plugin_dir_url( dirname( __FILE__ ) ) .'css/wp-bingo.min.css', array(), WP_BINGO_VERSION );
+		wp_register_script( 'wp-bingo', plugin_dir_url( dirname( __FILE__ ) ) .'js/wp-bingo.min.js', array(), WP_BINGO_VERSION, true );
+
 		global $post;
 
 		if ( !empty( $post ) ) {
@@ -157,8 +160,8 @@ class WP_Bingo_Template {
 
 			if ( array_key_exists ( $template, $this->templates ) ) {
 
-				wp_enqueue_style( 'wp-bingo-css', plugin_dir_url( dirname( __FILE__ ) ) .'css/wp-bingo.min.css', array(), WP_BINGO_VERSION );
-				wp_enqueue_script( 'wp-bingo-js', plugin_dir_url( dirname( __FILE__ ) ) .'js/wp-bingo.min.js', array(), WP_BINGO_VERSION, true );
+				wp_enqueue_style( 'wp-bingo' );
+				wp_enqueue_script( 'wp-bingo' );
 
 			}
 
