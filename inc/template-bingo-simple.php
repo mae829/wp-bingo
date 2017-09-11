@@ -12,6 +12,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="stylesheet" href="<?php echo plugin_dir_url( dirname( __FILE__ ) ); ?>css/wp-bingo.min.css">
+		<?php do_action('wb-simple-header') ?>
 	</head>
 	<body class="wp-bingo layout-simple">
 		<div class="wrapper">
@@ -27,6 +28,6 @@
 		</div>
 
 		<script src="<?php echo plugin_dir_url( dirname( __FILE__ ) ); ?>js/wp-bingo.min.js"></script>
-
+		<?php do_action('wb-simple-footer') ?>
 	</body>
 </html>
