@@ -40,12 +40,24 @@ class WP_Bingo_Shortcode {
 		$post_ID		= get_the_ID();
 		$buzzwords		= get_post_meta( $post_ID, '_bingo_buzzwords', true );
 
+		// Header Word
+		$header_word	= 'BINGO';
+		$header_word	= apply_filters( 'wp-bingo-header-word', $header_word );
+
+		$header_word_array	= str_split( $header_word, 1 );
+
 		// Call up the needed style/script files
 		wp_enqueue_style( 'wp-bingo' );
 		wp_enqueue_script( 'wp-bingo' );
 
 		// Start getting content of shortcode ready
 		ob_start();
+
+		echo '<div class="wp-bingo__header">';
+			foreach ( $header_word_array as $letter ) {
+				echo '<div>'. $letter .'</div>';
+			}
+		echo '</div>';
 
 		echo '<div class="wp-bingo__wrapper">';
 

@@ -13,7 +13,7 @@
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="stylesheet" href="<?php echo plugin_dir_url( dirname( __FILE__ ) ); ?>css/wp-bingo.min.css">
 	</head>
-	<body>
+	<body class="wp-bingo layout-simple">
 		<div class="wrapper">
 
 			<h1><?php the_title(); ?></h1>
