@@ -1,4 +1,4 @@
-# WP DFP Ads
+# WP Bingo
 
 **Authors:**      [Mike Estrada](https://bleucellar.com)
 **Tags:**         bingo, wordpress
