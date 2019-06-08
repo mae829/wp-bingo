@@ -1,16 +1,17 @@
 <?php
 /**
- * Plugin Name:			WP Bingo
- * Plugin URI:			https://bleucellar.com/
- * Description:			Fun plugin to play bingo
- * Version:				1.0.0
- * Author:				Mike Estrada
- * Author URI:			https://bleucellar.com/
- * Text Domain:			wp-bingo
+ * Plugin Name: WP Bingo
+ * Plugin URI:  https://bleucellar.com/
+ * Description: Fun plugin to play bingo
+ * Version:     1.0.0
+ * Author:      Mike Estrada
+ * Author URI:  https://bleucellar.com/
+ * Text Domain: wp-bingo
  */
 
-if ( !defined('WPINC') )
-	die ( 'YOU SHALL NOT PASS!' );
+if ( ! defined( 'WPINC' ) ) {
+	die( 'YOU SHALL NOT PASS!' );
+}
 
 define( 'WP_BINGO_VERSION', '1.0' );
 
