@@ -117,6 +117,11 @@ class WP_Bingo_Metadata {
 	 * @param int $post_ID Post ID.
 	 */
 	public function save_buzzwords_data( $post_ID ) {
+		// If this is an autosave, our form has not been submitted, so we don't want to do anything.
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+			return;
+		}
+
 		// Verify this came from where the screen is supposed to be
 		// and make absolutely sure value exists and it's an array.
 		if (
