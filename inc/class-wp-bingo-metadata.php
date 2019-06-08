@@ -81,6 +81,9 @@ class WP_Bingo_Metadata {
 	public function wp_bingo_meta_html( $post ) {
 		$buzzwords = get_post_meta( $post->ID, '_bingo_buzzwords', true );
 		$i         = 0;
+
+		// Add an nonce field so we can check for it later.
+		wp_nonce_field( 'wp_bingo_box', 'wp_bingo_box_nonce' );
 		?>
 
 		<div class="wb-repeatable-fields" data-repeat-limit="24">
@@ -114,13 +117,20 @@ class WP_Bingo_Metadata {
 	 * @param int $post_ID Post ID.
 	 */
 	public function save_buzzwords_data( $post_ID ) {
-		// Make absolutely sure value exists and it's an array.
-		if ( ! empty( $_POST['bingo_buzzwords'] ) && is_array( $_POST['bingo_buzzwords'] ) ) {
-			// Remove empty values.
-			$buzzwords = array_filter( wp_unslash( $_POST['bingo_buzzwords'] ) );
+		// Verify this came from where the screen is supposed to be
+		// and make absolutely sure value exists and it's an array.
+		if (
+			isset( $_POST['bingo_buzzwords'], $_POST['wp_bingo_box_nonce'] )
+			&& wp_verify_nonce( sanitize_key( $_POST['wp_bingo_box_nonce'] ), 'wp_bingo_box' )
+			&& is_array( $_POST['bingo_buzzwords'] )
+		) {
+			$buzzwords = array_map( 'sanitize_text_field', wp_unslash( $_POST['bingo_buzzwords'] ) );
 
 			// Trim whitespace of values.
 			$buzzwords = array_map( 'trim', $buzzwords );
+
+			// Remove empty values.
+			$buzzwords = array_filter( $buzzwords );
 
 			update_post_meta( $post_ID, '_bingo_buzzwords', $buzzwords );
 		}
