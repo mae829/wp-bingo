@@ -58,10 +58,10 @@ gulp.task( 'browser-sync', function() {
         // browser: ['firefox']
     } );
 
-    gulp.watch( ['css/**/*.scss'], ['css'] );
-    gulp.watch( ['js/*.js', '!js/*.min.js'], ['js'] );
+    gulp.watch( ['css/**/*.scss'], gulp.series( 'css' ) );
+    gulp.watch( ['js/*.js', '!js/*.min.js'], gulp.series( 'js' ) );
     gulp.watch( 'inc/**/*.php' ).on('change', browserSync.reload );
 
  } );
 
-gulp.task( 'default', ['browser-sync'] );
+gulp.task( 'default', gulp.series( 'browser-sync' ) );
