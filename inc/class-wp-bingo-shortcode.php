@@ -46,6 +46,7 @@ class WP_Bingo_Shortcode {
 	public function bingo_shortcode() {
 		// Get required metadata.
 		$post_ID   = get_the_ID();
+		$numbers   = get_post_meta( $post_ID, '_bingo_numbers', true );
 		$buzzwords = get_post_meta( $post_ID, '_bingo_buzzwords', true );
 
 		// Header Word.
@@ -72,23 +73,49 @@ class WP_Bingo_Shortcode {
 
 		<div class="wp-bingo__wrapper">
 			<?php
-			if ( ! empty( $buzzwords ) ) {
+			if ( ! empty( $numbers ) ) {
+				$column       = 0;
+				$columns      = array(
+					range( 1, 15 ),
+					range( 16, 30 ),
+					range( 31, 45 ),
+					range( 46, 60 ),
+					range( 61, 75 ),
+				);
 
+				for ( $i = 0; $i < 25; $i++ ) {
+					// FREE TILE.
+					if ( 12 === $i ) {
+						echo '<div class="wp-bingo__item active">FREE</div>' . "\n\t\t\t\t";
+						$column = 0 === ( $column + 1 ) % 5 ? 0 : ++$column;
+						continue;
+					}
+
+					$number     = $columns[ $column ][ wp_rand( 0, count( $columns[ $column ] ) - 1 ) ];
+					$number_key = array_search( $number, $columns[ $column ], true );
+
+					echo '<div class="wp-bingo__item">' . esc_html( $number ) . '</div>' . "\n\t\t\t\t";
+
+					unset( $columns[ $column ][ $number_key ] );
+
+					$columns[ $column ] = array_values( $columns[ $column ] );
+
+					$column = 0 === ( $column + 1 ) % 5 ? 0 : ++$column;
+				}
+			} elseif ( ! empty( $buzzwords ) ) {
 				$count_words = count( $buzzwords );
 
 				for ( $i = 0; $i < $count_words; $i++ ) {
-
 					// FREE TILE.
 					if ( 12 === $i ) {
 						echo '<div class="wp-bingo__item active">FREE</div>' . "\n\t\t\t\t";
 					}
 
-					$word = array_rand( $buzzwords );
+					$word_key = array_rand( $buzzwords );
 
-					echo '<div class="wp-bingo__item">' . esc_html( $buzzwords[ $word ] ) . '</div>' . "\n\t\t\t\t";
+					echo '<div class="wp-bingo__item">' . esc_html( $buzzwords[ $word_key ] ) . '</div>' . "\n\t\t\t\t";
 
-					unset( $buzzwords[ $word ] );
-
+					unset( $buzzwords[ $word_key ] );
 				}
 			} else {
 				echo 'NEED BUZZWORDS TO BE POPULATED';
