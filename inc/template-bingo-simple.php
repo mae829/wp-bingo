@@ -12,7 +12,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
-		<link rel="stylesheet" href="<?php echo esc_url( plugin_dir_url( dirname( __FILE__ ) ) ); ?>css/wp-bingo.min.css">
+		<link rel="stylesheet" href="<?php echo esc_url( plugin_dir_url( dirname( __FILE__ ) ) ); ?>assets/css/wp-bingo.min.css">
 		<?php do_action( 'wb_simple_header' ); ?>
 	</head>
 	<body class="wp-bingo layout-simple">
@@ -35,7 +35,7 @@
 
 		</div>
 
-		<script src="<?php echo esc_url( plugin_dir_url( dirname( __FILE__ ) ) ); ?>js/wp-bingo.min.js"></script>
+		<script src="<?php echo esc_url( plugin_dir_url( dirname( __FILE__ ) ) ); ?>assets/js/wp-bingo.min.js"></script>
 		<?php do_action( 'wb_simple_footer' ); ?>
 	</body>
 </html>

@@ -175,7 +175,7 @@ class WP_Bingo_Metadata {
 			$template = get_post_meta( $post->ID, '_wp_page_template', true );
 
 			if ( array_key_exists( $template, $this->templates ) ) {
-				wp_enqueue_script( 'wpbingo-admin-js', plugin_dir_url( dirname( __FILE__ ) ) . 'js/admin.js', array( 'jquery' ), WP_BINGO_VERSION, true );
+				wp_enqueue_script( 'wpbingo-admin-js', plugin_dir_url( dirname( __FILE__ ) ) . 'assets/js/admin.min.js', array( 'jquery' ), WP_BINGO_VERSION, true );
 			}
 		}
 	}

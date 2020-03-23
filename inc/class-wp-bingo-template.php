@@ -152,8 +152,8 @@ class WP_Bingo_Template {
 	 * Register all of the hooks related to the public-facing functionality of the plugin.
 	 */
 	public function register_public_scripts_and_styles() {
-		wp_register_style( 'wp-bingo', plugin_dir_url( dirname( __FILE__ ) ) . 'css/wp-bingo.min.css', array(), WP_BINGO_VERSION );
-		wp_register_script( 'wp-bingo', plugin_dir_url( dirname( __FILE__ ) ) . 'js/wp-bingo.min.js', array(), WP_BINGO_VERSION, true );
+		wp_register_style( 'wp-bingo', plugin_dir_url( dirname( __FILE__ ) ) . 'assets/css/wp-bingo.min.css', array(), WP_BINGO_VERSION );
+		wp_register_script( 'wp-bingo', plugin_dir_url( dirname( __FILE__ ) ) . 'assets/js/wp-bingo.min.js', array(), WP_BINGO_VERSION, true );
 	}
 
 	/**
