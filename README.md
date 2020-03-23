@@ -1,6 +1,6 @@
 # WP Bingo
 
-**Authors:**      [Mike Estrada](https://bleucellar.com)
+**Authors:**      [Mike Estrada](https://miguelestrada.dev/)
 **Tags:**         bingo, wordpress
 **License:**      GPLv2 or later
 **License URI:**  http://www.gnu.org/licenses/gpl-2.0.html
