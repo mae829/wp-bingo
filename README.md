@@ -27,6 +27,18 @@ Fun plugin to have a Bingo card on a page template
 ## Changelog
 All notable changes to this project will be documented here.
 
-## 1.0
 
+### 1.1.1
+* Fix horizontal logic for win
+* Clean up files to abide by WP code standards
+* Add nonce field and nonce check to abide by WP code standards
+* Add check for autosave in save method
+* Update gulp file for gulp 4
+* Switch gulp file name to use babel and ES6
+* Add a gulp config file holding sever config
+* Update workflow to use stylelint + webpack
+* Organize files into src/assets
+* Bump version number
+
+### 1.0
 * Initial creation
