@@ -3,7 +3,7 @@
  * Plugin Name: WP Bingo
  * Plugin URI:  https://miguelestrada.dev/
  * Description: Fun plugin to play bingo
- * Version:     1.0.0
+ * Version:     1.1.1
  * Author:      Mike Estrada
  * Author URI:  https://miguelestrada.dev/
  * Text Domain: wp-bingo
@@ -13,7 +13,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die( 'YOU SHALL NOT PASS!' );
 }
 
-define( 'WP_BINGO_VERSION', '1.0' );
+define( 'WP_BINGO_VERSION', '1.1.1' );
 
 /**
  * The core plugin class file.
