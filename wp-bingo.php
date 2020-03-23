@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: WP Bingo
- * Plugin URI:  https://bleucellar.com/
+ * Plugin URI:  https://miguelestrada.dev/
  * Description: Fun plugin to play bingo
  * Version:     1.0.0
  * Author:      Mike Estrada
- * Author URI:  https://bleucellar.com/
+ * Author URI:  https://miguelestrada.dev/
  * Text Domain: wp-bingo
  */
 
