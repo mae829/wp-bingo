@@ -35,7 +35,7 @@
     "gulp-sass-lint": "^1.4.0",
     "gulp-stylelint": "^13.0.0",
     "node-sass": "^4.13.1",
-    "stylelint": "^13.2.1",
+    "stylelint": "^15.10.1",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-declaration-use-variable": "^1.7.2",
     "stylelint-media-use-custom-media": "^1.0.0",
